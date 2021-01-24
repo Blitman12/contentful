@@ -6,3 +6,26 @@ p {
   display: inline;
   padding-left: 3px;
 }
+
+.linkPosts {
+  text-decoration: none;
+  color: #932432;
+  background-color: #f3f3f3;
+  display: flex;
+  cursor: pointer;
+}
+
+.linkPosts:hover {
+  color: #283747;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+/* 
+.linkPosts:not(:first-child) {
+  padding-left: 5em;
+} */
+
+.linkContainer {
+  padding-top: 1em;
+}

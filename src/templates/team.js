@@ -4,9 +4,7 @@ import Layout from "../components/layout"
 import "../components/otherPages.css"
 
 const Team = ({ data }) => {
-
   const [coachString, setCoachString] = useState("")
-
   useEffect(
     () => {
       if (data.team) {
@@ -26,7 +24,7 @@ const Team = ({ data }) => {
         <p>Number of players enrolled: {data.team.numberOfPlayers}</p>
         <br></br>
         <br></br>
-        {/* short circtu: if coachString exists render this div */}
+        {/* short circut: if coachString exists render this div */}
         {coachString && (
           <div>
             Coaches:{` `}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
+import "../components/otherPages.css"
 
 const Posts = ({ data: { allSitePage, allContentfulBlog } }) => {
   const [linkData, setLinkData] = useState(null)
@@ -40,11 +41,11 @@ const Posts = ({ data: { allSitePage, allContentfulBlog } }) => {
   )
 
   return (
-    <div>
+    <div className="linkContainer">
       {/* short circuting: linkData does not effect on first run. If statement essentially, Wont run if linkData evaluates false. Can you and or or */}
       {linkData &&
         linkData.map(({ name, slug }) => (
-          <Link to={`${slug}`} key={slug}>
+          <Link className="linkPosts" to={`${slug}`} key={slug}>
             {name}
           </Link>
         ))}

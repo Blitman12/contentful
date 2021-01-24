@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Posts from "../components/posts"
+import Ending from "../components/ending"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => (
       from books (can you guess the book?){" "}
     </p>
     <Posts data={data} />
+    <Ending />
   </Layout>
 )
 
