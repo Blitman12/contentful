@@ -1,22 +1,38 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
+import Posts from "../components/posts"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <h1>Welcome to my Gatsby-Netlify-Contentful blog</h1>
+    <p>
+      This is a simple blog showing sports teams. Some of these teams have names
+      from books (can you guess the book?){" "}
+    </p>
+    <Posts data={data} />
   </Layout>
 )
+
+export const linkQuery = graphql`
+  query MyQuery {
+    allContentfulBlog {
+      group(field: contentful_id) {
+        nodes {
+          slug
+        }
+      }
+    }
+    allSitePage {
+      edges {
+        node {
+          path
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
